@@ -9,7 +9,8 @@ import path from 'path';
 import fs from "fs"
 
 const __dirname = path.resolve();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 9000;
+console.log(port)
 
 const app = express();
 
@@ -19,7 +20,7 @@ var corsOptions = {
     optionsSuccessStatus: 200, // For legacy browser support
 };
 
-app.use(express.static(__dirname + "/build")); //use static files in ROOT/public folder
+app.use(express.static("build")); //use static files in ROOT/public folder
 app.use(express.json());
 // app.use(cors(corsOptions));
 app.use(cookieParser());
