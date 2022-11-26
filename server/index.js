@@ -34,9 +34,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 var dir = __dirname;
-app.get("/",(req,res) => {
-	res.sendFile("build\\index.html")
-})
 app.post("/api/upload", upload.single("file"), function (req, res) {
     const file = req.file;
     res.status(200).json(file.filename);
