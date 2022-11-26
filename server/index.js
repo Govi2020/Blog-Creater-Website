@@ -20,7 +20,7 @@ var corsOptions = {
     optionsSuccessStatus: 200, // For legacy browser support
 };
 
-app.use(express.static("build")); //use static files in ROOT/public folder
+app.use("/", express.static("./build/"));
 app.use(express.json());
 // app.use(cors(corsOptions));
 app.use(cookieParser());
