@@ -9,6 +9,7 @@ import path from 'path';
 import fs from "fs"
 
 const __dirname = path.resolve();
+const port = process.env.PORT || 8000;
 
 const app = express();
 
@@ -49,6 +50,6 @@ app.get("/test", (req, res) => {
     res.json("It works");
 });
 
-app.listen(8000, () => {
-    console.log("Connected To Port 8000");
+app.listen(port, () => {
+    console.log("Connected To Port " + port);
 });
