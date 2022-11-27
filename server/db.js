@@ -4,7 +4,8 @@ export const db = mysql.createConnection({
     host: process.env.MYSQLHOST || "localhost",
     user: process.env.MYSQLUSER || "root",
     password: process.env.MYSQLPASSWORD || "password",
-    port: process.env.MYSQLPORT || "3306"
+    port: process.env.MYSQLPORT || "3306",
+    database: process.env.MYSQLDATABASE || "blog_website"
 });
 
 db.connect(function (err) {
@@ -12,5 +13,5 @@ db.connect(function (err) {
         console.error("error connecting: " + err.stack);
         return;
     }
-    console.log("connected as id " + db.threadId);
+    console.log("Connected To DataBase with ID " + db.threadId);
 });

@@ -18,7 +18,7 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("/auth/register", inputs, {
+            const res = await axios.post("/api/auth/register", inputs, {
                 withCredentials: true,
                 headers: {
                     "Access-Control-Allow-Origin": "*",
@@ -61,7 +61,7 @@ export default function Register() {
                 <button onClick={handleSubmit}>Register</button>
                 {error && <p>{error}</p>}
                 <span>
-                    Don't Have a account <Link>Register</Link>
+                    Already Have a Account ? <Link to="/login">Login</Link>
                 </span>
             </form>
         </div>
