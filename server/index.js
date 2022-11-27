@@ -50,4 +50,6 @@ app.get("/test", (req, res) => {
 
 app.listen(port, () => {
     console.log("Connected To Port " + port);
+    console.log(process.env.MYSQLPORT)
+    console.log(process.env.MYSQL_URL)
 });
