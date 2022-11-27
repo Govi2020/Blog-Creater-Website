@@ -1,8 +1,4 @@
 import mysql from "mysql";
 
-export const db = await mysql.createConnection({
-    host:"localhost",
-    user:"root"
-})
+export const db = await mysql.createConnection(process.env.MYSQL_URL)
 
-console.log(db)
