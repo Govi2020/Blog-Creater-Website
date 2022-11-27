@@ -1,10 +1,10 @@
-import mysql from "mysql";
+import mysql from "mysql2";
 
 export const db = mysql.createConnection({
-    host: "containers-us-west-100.railway.app",
-    user: "root",
-    password: "YtNhNL6cepRtzns3EBag",
-    port: 5794
+    host: process.env.MYSQLHOST || "localhost",
+    user: process.env.MYSQLUSER || "root",
+    password: process.env.MYSQLPASSWORD || "password",
+    port: process.env.MYSQLPORT || "3306"
 });
 
 db.connect(function (err) {
@@ -12,5 +12,5 @@ db.connect(function (err) {
         console.error("error connecting: " + err.stack);
         return;
     }
-    console.log("connected as id " + connection.threadId);
+    console.log("connected as id " + db.threadId);
 });
