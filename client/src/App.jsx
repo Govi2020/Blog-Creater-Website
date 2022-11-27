@@ -15,9 +15,6 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Write from "./pages/Write";
 
-fetch('/api/some/resource')
-  .then(resp => resp.json())
-  .then(data => console.log(data));
 function App() {
 
   // axios.defaults.withCredentials = true;
