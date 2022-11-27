@@ -9,9 +9,9 @@ export default function Write() {
     const state = useLocation().state;
     const [value, setValue] = useState(state?.desc || "");
     const [title, setTitle] = useState(state?.title || "");
-    const [file, setFile] = useState(null);
+    const [file, setFile] = useState(state?.img || null);
     const [cat, setCat] = useState(state?.cat || "");
-    console.log(state)
+    console.log(state);
 
     const navigate = useNavigate();
 
@@ -29,7 +29,6 @@ export default function Write() {
     const handleClick = async (e) => {
         e.preventDefault();
         const imgUrl = await upload();
-
 
         try {
             state
@@ -84,7 +83,9 @@ export default function Write() {
                         type="file"
                         id="file"
                         name=""
-                        onChange={(e) => setFile(e.target.files[0])}
+                        onChange={(e) => {
+                            setFile(e.target.files[0]);
+                        }}
                     />
                     <label className="file" htmlFor="file">
                         Upload Image
