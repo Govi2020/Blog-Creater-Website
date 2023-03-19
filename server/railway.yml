@@ -1,0 +1,9 @@
+name: attractive-mailbox
+services:
+  web:
+    env:
+      NODE_ENV: production
+      PORT: 3000
+    commands:
+      start: node index.js
+    sleep_timeout: 1800 # 30 minutes
